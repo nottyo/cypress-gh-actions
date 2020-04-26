@@ -1,11 +1,11 @@
-name: Cypress E2E Tests
+name: Cypress E2E Tests on Chrome
 on: [push]
 jobs:
   cypress-run: 
     runs-on: ubuntu-latest
     strategy: 
       matrix:
-        node: [10, 12]
+        node: 12
     name: E2E on Node v${{ matrix.node }}
     steps:
       - name: Setup Node
@@ -21,6 +21,7 @@ jobs:
         uses: cypress-io/github-action@v1
         with: 
           record: true
+          browser: chrome
         env: 
           CYPRESS_RECORD_KEY: ${{ secrets.CYPRESS_RECORD_KEY }}
           GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }}

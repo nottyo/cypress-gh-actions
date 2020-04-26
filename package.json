@@ -1,0 +1,15 @@
+{
+  "name": "cypress-gh-actions",
+  "version": "1.0.0",
+  "description": "cypress test project integrated with github actions",
+  "main": "index.js",
+  "author": "Traitanit Huangsri",
+  "license": "MIT",
+  "scripts": {
+    "cypress:open": "cypress open"
+  },
+  "dependencies": {
+    "cypress": "^4.4.1",
+    "typescript": "^3.8.3"
+  }
+}

@@ -3,9 +3,10 @@ on: [push]
 jobs:
   cypress-run: 
     runs-on: ubuntu-latest
-    strategy: 
+    strategy:
+      fail-fast: false
       matrix:
-        node: [10, 12]
+        containers: [1, 2, 3]
     name: E2E on Node v${{ matrix.node }}
     steps:
       - name: Setup Node
@@ -21,6 +22,8 @@ jobs:
         uses: cypress-io/github-action@v1
         with: 
           record: true
+          parallel: true
+          group: 'Todo Tests'
           browser: chrome
         env: 
           CYPRESS_RECORD_KEY: ${{ secrets.CYPRESS_RECORD_KEY }}

@@ -11,4 +11,9 @@ describe('todo test', () => {
     cy.get(locators.newTodoInput).type(`${todo}{enter}`);
     cy.get(locators.todoLabel).first().should('have.text', todo);
   });
+
+  it('always failed this test', () => {
+    const expectPlaceHolders = 'My Todos'
+    cy.get(locators.newTodoInput).should('have.attr', 'placeholder', expectPlaceHolders);
+  })
 });

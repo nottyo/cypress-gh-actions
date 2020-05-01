@@ -19,11 +19,6 @@ jobs:
       - name: Checkout
         uses: actions/checkout@v1
       
-      - name: Cypress Info
-        uses: ./
-        with:
-          build: npx cypress info
-      
       - name: Cypress run
         uses: cypress-io/github-action@v1
         with: 

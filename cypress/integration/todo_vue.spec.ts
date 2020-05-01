@@ -12,8 +12,8 @@ describe('todo vue test', () => {
     cy.get(locators.todoLabel).first().should('have.text', todo);
   });
 
-  it('always failed this test', () => {
+  it('checks todo placeholders', () => {
     const expectPlaceHolders = 'My Todos'
     cy.get(locators.newTodoInput).should('have.attr', 'placeholder', expectPlaceHolders);
-  })
+  });
 });

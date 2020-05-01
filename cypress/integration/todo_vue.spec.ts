@@ -13,7 +13,7 @@ describe('todo vue test', () => {
   });
 
   it('always failed this test', () => {
-    const expectPlaceHolders = 'My Todos'
+    const expectPlaceHolders = 'What needs to be done?'
     cy.get(locators.vueTodo.newTodoInput).should('have.attr', 'placeholder', expectPlaceHolders);
   })
 });
